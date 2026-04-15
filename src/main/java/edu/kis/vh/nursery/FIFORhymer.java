@@ -21,6 +21,7 @@ public class FIFORhymer extends DefaultCountingOutRhymer {
      * @return pierwszy dodany element lub -1 jesli struktura jest pusta
      */
     @Override
+    //TODO: Metoda wykonuje wiele dzialan, pobranie i przenoszenie elementu moznaby rozdzielic na mniejsze czesci
     public int countOut() {
         // Przeniesienie wszystkich elementow do stosu pomocniczego
         while (!callCheck())
