@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class RhymersJUnitTest {
-
+//wszystkie 5 testow przechodzi poprawnie
     @Test
     public void testCountIn() {
         DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
@@ -73,6 +73,24 @@ public class RhymersJUnitTest {
         Assert.assertEquals(testValue, result);
         result = rhymer.countOut();
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
+    }
+
+    @Test
+    public void testStackSequence(){
+        DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
+
+        Assert.assertTrue(rhymer.callCheck());
+
+        rhymer.countIn(5);
+        rhymer.countIn(10);
+        rhymer.countIn(20);
+
+        Assert.assertEquals(20, rhymer.countOut());
+        Assert.assertEquals(10, rhymer.countOut());
+        Assert.assertEquals(5, rhymer.countOut());
+        Assert.assertEquals(-1, rhymer.countOut());
+
+        Assert.assertTrue(rhymer.callCheck());
     }
 
 }
